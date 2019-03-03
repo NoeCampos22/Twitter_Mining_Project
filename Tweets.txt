@@ -1,0 +1,1092 @@
+{
+  "contributors": null, 
+  "coordinates": null, 
+  "created_at": "Sun Mar 03 23:13:27 +0000 2019", 
+  "entities": {
+    "hashtags": [], 
+    "symbols": [], 
+    "urls": [], 
+    "user_mentions": [
+      {
+        "id": 2874273803, 
+        "id_str": "2874273803", 
+        "indices": [
+          3, 
+          19
+        ], 
+        "name": "Carmen Caesaris", 
+        "screen_name": "carmen_caesaris"
+      }
+    ]
+  }, 
+  "favorite_count": 0, 
+  "favorited": false, 
+  "filter_level": "low", 
+  "geo": null, 
+  "id": 1102346276161703937, 
+  "id_str": "1102346276161703937", 
+  "in_reply_to_screen_name": null, 
+  "in_reply_to_status_id": null, 
+  "in_reply_to_status_id_str": null, 
+  "in_reply_to_user_id": null, 
+  "in_reply_to_user_id_str": null, 
+  "is_quote_status": false, 
+  "lang": "es", 
+  "place": null, 
+  "quote_count": 0, 
+  "reply_count": 0, 
+  "retweet_count": 0, 
+  "retweeted": false, 
+  "retweeted_status": {
+    "contributors": null, 
+    "coordinates": null, 
+    "created_at": "Sun Mar 03 13:19:23 +0000 2019", 
+    "display_text_range": [
+      0, 
+      140
+    ], 
+    "entities": {
+      "hashtags": [], 
+      "symbols": [], 
+      "urls": [
+        {
+          "display_url": "twitter.com/i/web/status/1\u2026", 
+          "expanded_url": "https://twitter.com/i/web/status/1102196773861421056", 
+          "indices": [
+            116, 
+            139
+          ], 
+          "url": "https://t.co/y9AGnj7WDv"
+        }
+      ], 
+      "user_mentions": []
+    }, 
+    "extended_tweet": {
+      "display_text_range": [
+        0, 
+        277
+      ], 
+      "entities": {
+        "hashtags": [
+          {
+            "indices": [
+              209, 
+              234
+            ], 
+            "text": "D\u00edaMundialDeLaNaturaleza"
+          }, 
+          {
+            "indices": [
+              235, 
+              263
+            ], 
+            "text": "D\u00edaMundialDeLaVidaSilvestre"
+          }, 
+          {
+            "indices": [
+              264, 
+              277
+            ], 
+            "text": "FelizDomingo"
+          }
+        ], 
+        "media": [
+          {
+            "display_url": "pic.twitter.com/1swX1HYCyN", 
+            "expanded_url": "https://twitter.com/carmen_caesaris/status/1102196773861421056/photo/1", 
+            "id": 1102196661214998530, 
+            "id_str": "1102196661214998530", 
+            "indices": [
+              278, 
+              301
+            ], 
+            "media_url": "http://pbs.twimg.com/media/D0vKBhBXcAIkTHm.jpg", 
+            "media_url_https": "https://pbs.twimg.com/media/D0vKBhBXcAIkTHm.jpg", 
+            "sizes": {
+              "large": {
+                "h": 1198, 
+                "resize": "fit", 
+                "w": 800
+              }, 
+              "medium": {
+                "h": 1198, 
+                "resize": "fit", 
+                "w": 800
+              }, 
+              "small": {
+                "h": 680, 
+                "resize": "fit", 
+                "w": 454
+              }, 
+              "thumb": {
+                "h": 150, 
+                "resize": "crop", 
+                "w": 150
+              }
+            }, 
+            "type": "photo", 
+            "url": "https://t.co/1swX1HYCyN"
+          }, 
+          {
+            "display_url": "pic.twitter.com/1swX1HYCyN", 
+            "expanded_url": "https://twitter.com/carmen_caesaris/status/1102196773861421056/photo/1", 
+            "id": 1102196685017677824, 
+            "id_str": "1102196685017677824", 
+            "indices": [
+              278, 
+              301
+            ], 
+            "media_url": "http://pbs.twimg.com/media/D0vKC5sXgAAZUKd.jpg", 
+            "media_url_https": "https://pbs.twimg.com/media/D0vKC5sXgAAZUKd.jpg", 
+            "sizes": {
+              "large": {
+                "h": 640, 
+                "resize": "fit", 
+                "w": 426
+              }, 
+              "medium": {
+                "h": 640, 
+                "resize": "fit", 
+                "w": 426
+              }, 
+              "small": {
+                "h": 640, 
+                "resize": "fit", 
+                "w": 426
+              }, 
+              "thumb": {
+                "h": 150, 
+                "resize": "crop", 
+                "w": 150
+              }
+            }, 
+            "type": "photo", 
+            "url": "https://t.co/1swX1HYCyN"
+          }, 
+          {
+            "display_url": "pic.twitter.com/1swX1HYCyN", 
+            "expanded_url": "https://twitter.com/carmen_caesaris/status/1102196773861421056/photo/1", 
+            "id": 1102196705800400897, 
+            "id_str": "1102196705800400897", 
+            "indices": [
+              278, 
+              301
+            ], 
+            "media_url": "http://pbs.twimg.com/media/D0vKEHHWsAE2JQE.jpg", 
+            "media_url_https": "https://pbs.twimg.com/media/D0vKEHHWsAE2JQE.jpg", 
+            "sizes": {
+              "large": {
+                "h": 640, 
+                "resize": "fit", 
+                "w": 428
+              }, 
+              "medium": {
+                "h": 640, 
+                "resize": "fit", 
+                "w": 428
+              }, 
+              "small": {
+                "h": 640, 
+                "resize": "fit", 
+                "w": 428
+              }, 
+              "thumb": {
+                "h": 150, 
+                "resize": "crop", 
+                "w": 150
+              }
+            }, 
+            "type": "photo", 
+            "url": "https://t.co/1swX1HYCyN"
+          }, 
+          {
+            "display_url": "pic.twitter.com/1swX1HYCyN", 
+            "expanded_url": "https://twitter.com/carmen_caesaris/status/1102196773861421056/photo/1", 
+            "id": 1102196722082762754, 
+            "id_str": "1102196722082762754", 
+            "indices": [
+              278, 
+              301
+            ], 
+            "media_url": "http://pbs.twimg.com/media/D0vKFDxX0AI1QZk.jpg", 
+            "media_url_https": "https://pbs.twimg.com/media/D0vKFDxX0AI1QZk.jpg", 
+            "sizes": {
+              "large": {
+                "h": 2017, 
+                "resize": "fit", 
+                "w": 1426
+              }, 
+              "medium": {
+                "h": 1200, 
+                "resize": "fit", 
+                "w": 848
+              }, 
+              "small": {
+                "h": 680, 
+                "resize": "fit", 
+                "w": 481
+              }, 
+              "thumb": {
+                "h": 150, 
+                "resize": "crop", 
+                "w": 150
+              }
+            }, 
+            "type": "photo", 
+            "url": "https://t.co/1swX1HYCyN"
+          }
+        ], 
+        "symbols": [], 
+        "urls": [], 
+        "user_mentions": []
+      }, 
+      "extended_entities": {
+        "media": [
+          {
+            "display_url": "pic.twitter.com/1swX1HYCyN", 
+            "expanded_url": "https://twitter.com/carmen_caesaris/status/1102196773861421056/photo/1", 
+            "id": 1102196661214998530, 
+            "id_str": "1102196661214998530", 
+            "indices": [
+              278, 
+              301
+            ], 
+            "media_url": "http://pbs.twimg.com/media/D0vKBhBXcAIkTHm.jpg", 
+            "media_url_https": "https://pbs.twimg.com/media/D0vKBhBXcAIkTHm.jpg", 
+            "sizes": {
+              "large": {
+                "h": 1198, 
+                "resize": "fit", 
+                "w": 800
+              }, 
+              "medium": {
+                "h": 1198, 
+                "resize": "fit", 
+                "w": 800
+              }, 
+              "small": {
+                "h": 680, 
+                "resize": "fit", 
+                "w": 454
+              }, 
+              "thumb": {
+                "h": 150, 
+                "resize": "crop", 
+                "w": 150
+              }
+            }, 
+            "type": "photo", 
+            "url": "https://t.co/1swX1HYCyN"
+          }, 
+          {
+            "display_url": "pic.twitter.com/1swX1HYCyN", 
+            "expanded_url": "https://twitter.com/carmen_caesaris/status/1102196773861421056/photo/1", 
+            "id": 1102196685017677824, 
+            "id_str": "1102196685017677824", 
+            "indices": [
+              278, 
+              301
+            ], 
+            "media_url": "http://pbs.twimg.com/media/D0vKC5sXgAAZUKd.jpg", 
+            "media_url_https": "https://pbs.twimg.com/media/D0vKC5sXgAAZUKd.jpg", 
+            "sizes": {
+              "large": {
+                "h": 640, 
+                "resize": "fit", 
+                "w": 426
+              }, 
+              "medium": {
+                "h": 640, 
+                "resize": "fit", 
+                "w": 426
+              }, 
+              "small": {
+                "h": 640, 
+                "resize": "fit", 
+                "w": 426
+              }, 
+              "thumb": {
+                "h": 150, 
+                "resize": "crop", 
+                "w": 150
+              }
+            }, 
+            "type": "photo", 
+            "url": "https://t.co/1swX1HYCyN"
+          }, 
+          {
+            "display_url": "pic.twitter.com/1swX1HYCyN", 
+            "expanded_url": "https://twitter.com/carmen_caesaris/status/1102196773861421056/photo/1", 
+            "id": 1102196705800400897, 
+            "id_str": "1102196705800400897", 
+            "indices": [
+              278, 
+              301
+            ], 
+            "media_url": "http://pbs.twimg.com/media/D0vKEHHWsAE2JQE.jpg", 
+            "media_url_https": "https://pbs.twimg.com/media/D0vKEHHWsAE2JQE.jpg", 
+            "sizes": {
+              "large": {
+                "h": 640, 
+                "resize": "fit", 
+                "w": 428
+              }, 
+              "medium": {
+                "h": 640, 
+                "resize": "fit", 
+                "w": 428
+              }, 
+              "small": {
+                "h": 640, 
+                "resize": "fit", 
+                "w": 428
+              }, 
+              "thumb": {
+                "h": 150, 
+                "resize": "crop", 
+                "w": 150
+              }
+            }, 
+            "type": "photo", 
+            "url": "https://t.co/1swX1HYCyN"
+          }, 
+          {
+            "display_url": "pic.twitter.com/1swX1HYCyN", 
+            "expanded_url": "https://twitter.com/carmen_caesaris/status/1102196773861421056/photo/1", 
+            "id": 1102196722082762754, 
+            "id_str": "1102196722082762754", 
+            "indices": [
+              278, 
+              301
+            ], 
+            "media_url": "http://pbs.twimg.com/media/D0vKFDxX0AI1QZk.jpg", 
+            "media_url_https": "https://pbs.twimg.com/media/D0vKFDxX0AI1QZk.jpg", 
+            "sizes": {
+              "large": {
+                "h": 2017, 
+                "resize": "fit", 
+                "w": 1426
+              }, 
+              "medium": {
+                "h": 1200, 
+                "resize": "fit", 
+                "w": 848
+              }, 
+              "small": {
+                "h": 680, 
+                "resize": "fit", 
+                "w": 481
+              }, 
+              "thumb": {
+                "h": 150, 
+                "resize": "crop", 
+                "w": 150
+              }
+            }, 
+            "type": "photo", 
+            "url": "https://t.co/1swX1HYCyN"
+          }
+        ]
+      }, 
+      "full_text": "El grado de detalle de estos frescos hace que, 2100 a\u00f1os despu\u00e9s, el viento parezca mecer las hojas de los \u00e1rboles y resuene el trino de los p\u00e1jaros.\n\ud83d\udcf7Palazzo Massimo. Villa de Livia en Prima Porta, s. I a.C.\n#D\u00edaMundialDeLaNaturaleza #D\u00edaMundialDeLaVidaSilvestre #FelizDomingo https://t.co/1swX1HYCyN"
+    }, 
+    "favorite_count": 412, 
+    "favorited": false, 
+    "filter_level": "low", 
+    "geo": null, 
+    "id": 1102196773861421056, 
+    "id_str": "1102196773861421056", 
+    "in_reply_to_screen_name": null, 
+    "in_reply_to_status_id": null, 
+    "in_reply_to_status_id_str": null, 
+    "in_reply_to_user_id": null, 
+    "in_reply_to_user_id_str": null, 
+    "is_quote_status": false, 
+    "lang": "es", 
+    "place": null, 
+    "possibly_sensitive": false, 
+    "quote_count": 2, 
+    "reply_count": 14, 
+    "retweet_count": 150, 
+    "retweeted": false, 
+    "source": "<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>", 
+    "text": "El grado de detalle de estos frescos hace que, 2100 a\u00f1os despu\u00e9s, el viento parezca mecer las hojas de los \u00e1rboles\u2026 https://t.co/y9AGnj7WDv", 
+    "truncated": true, 
+    "user": {
+      "contributors_enabled": false, 
+      "created_at": "Wed Nov 12 21:12:12 +0000 2014", 
+      "default_profile": false, 
+      "default_profile_image": false, 
+      "description": "Arque\u00f3loga, romanista, escritora y so\u00f1adora.\n\nArchaeologist. Roman Ceramics, mainly Cooking and Coarse Wares. PhD candidate. Writer. \n\nEsp, Eng, Fra, Ita.", 
+      "favourites_count": 48983, 
+      "follow_request_sent": null, 
+      "followers_count": 18961, 
+      "following": null, 
+      "friends_count": 7257, 
+      "geo_enabled": true, 
+      "id": 2874273803, 
+      "id_str": "2874273803", 
+      "is_translator": false, 
+      "lang": "es", 
+      "listed_count": 198, 
+      "location": "Madrid (Spain).", 
+      "name": "Carmen Caesaris", 
+      "notifications": null, 
+      "profile_background_color": "000000", 
+      "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png", 
+      "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png", 
+      "profile_background_tile": false, 
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/2874273803/1415972613", 
+      "profile_image_url": "http://pbs.twimg.com/profile_images/926123126357938177/03fsxVhJ_normal.jpg", 
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/926123126357938177/03fsxVhJ_normal.jpg", 
+      "profile_link_color": "3B94D9", 
+      "profile_sidebar_border_color": "000000", 
+      "profile_sidebar_fill_color": "000000", 
+      "profile_text_color": "000000", 
+      "profile_use_background_image": false, 
+      "protected": false, 
+      "screen_name": "carmen_caesaris", 
+      "statuses_count": 48274, 
+      "time_zone": null, 
+      "translator_type": "none", 
+      "url": "https://curiouscat.me/carmen_caesaris", 
+      "utc_offset": null, 
+      "verified": false
+    }
+  }, 
+  "source": "<a href=\"http://twitter.com/download/iphone\" rel=\"nofollow\">Twitter for iPhone</a>", 
+  "text": "RT @carmen_caesaris: El grado de detalle de estos frescos hace que, 2100 a\u00f1os despu\u00e9s, el viento parezca mecer las hojas de los \u00e1rboles y r\u2026", 
+  "timestamp_ms": "1551654807497", 
+  "truncated": false, 
+  "user": {
+    "contributors_enabled": false, 
+    "created_at": "Fri Nov 27 23:56:50 +0000 2015", 
+    "default_profile": true, 
+    "default_profile_image": false, 
+    "description": null, 
+    "favourites_count": 61433, 
+    "follow_request_sent": null, 
+    "followers_count": 1004, 
+    "following": null, 
+    "friends_count": 630, 
+    "geo_enabled": false, 
+    "id": 4301351777, 
+    "id_str": "4301351777", 
+    "is_translator": false, 
+    "lang": "es", 
+    "listed_count": 53, 
+    "location": null, 
+    "name": "Maria Luisa HS", 
+    "notifications": null, 
+    "profile_background_color": "C0DEED", 
+    "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png", 
+    "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png", 
+    "profile_background_tile": false, 
+    "profile_banner_url": "https://pbs.twimg.com/profile_banners/4301351777/1511979428", 
+    "profile_image_url": "http://pbs.twimg.com/profile_images/670393974050439173/apOJTi9Z_normal.jpg", 
+    "profile_image_url_https": "https://pbs.twimg.com/profile_images/670393974050439173/apOJTi9Z_normal.jpg", 
+    "profile_link_color": "1DA1F2", 
+    "profile_sidebar_border_color": "C0DEED", 
+    "profile_sidebar_fill_color": "DDEEF6", 
+    "profile_text_color": "333333", 
+    "profile_use_background_image": true, 
+    "protected": false, 
+    "screen_name": "Operah3Maria", 
+    "statuses_count": 172293, 
+    "time_zone": null, 
+    "translator_type": "none", 
+    "url": null, 
+    "utc_offset": null, 
+    "verified": false
+  }
+}{
+  "contributors": null, 
+  "coordinates": null, 
+  "created_at": "Sun Mar 03 23:13:27 +0000 2019", 
+  "entities": {
+    "hashtags": [], 
+    "symbols": [], 
+    "urls": [], 
+    "user_mentions": [
+      {
+        "id": 84054978, 
+        "id_str": "84054978", 
+        "indices": [
+          3, 
+          16
+        ], 
+        "name": "PACMA", 
+        "screen_name": "PartidoPACMA"
+      }
+    ]
+  }, 
+  "favorite_count": 0, 
+  "favorited": false, 
+  "filter_level": "low", 
+  "geo": null, 
+  "id": 1102346276916596737, 
+  "id_str": "1102346276916596737", 
+  "in_reply_to_screen_name": null, 
+  "in_reply_to_status_id": null, 
+  "in_reply_to_status_id_str": null, 
+  "in_reply_to_user_id": null, 
+  "in_reply_to_user_id_str": null, 
+  "is_quote_status": false, 
+  "lang": "es", 
+  "place": null, 
+  "quote_count": 0, 
+  "reply_count": 0, 
+  "retweet_count": 0, 
+  "retweeted": false, 
+  "retweeted_status": {
+    "contributors": null, 
+    "coordinates": null, 
+    "created_at": "Sun Mar 03 10:49:00 +0000 2019", 
+    "display_text_range": [
+      0, 
+      140
+    ], 
+    "entities": {
+      "hashtags": [], 
+      "symbols": [], 
+      "urls": [
+        {
+          "display_url": "twitter.com/i/web/status/1\u2026", 
+          "expanded_url": "https://twitter.com/i/web/status/1102158929398661121", 
+          "indices": [
+            116, 
+            139
+          ], 
+          "url": "https://t.co/qQLrmPYKfI"
+        }
+      ], 
+      "user_mentions": []
+    }, 
+    "extended_tweet": {
+      "display_text_range": [
+        0, 
+        257
+      ], 
+      "entities": {
+        "hashtags": [
+          {
+            "indices": [
+              244, 
+              257
+            ], 
+            "text": "FelizDomingo"
+          }
+        ], 
+        "media": [
+          {
+            "additional_media_info": {
+              "monetizable": false
+            }, 
+            "display_url": "pic.twitter.com/tq9YxYZIDQ", 
+            "expanded_url": "https://twitter.com/PartidoPACMA/status/1102158929398661121/video/1", 
+            "id": 1102156885032124417, 
+            "id_str": "1102156885032124417", 
+            "indices": [
+              258, 
+              281
+            ], 
+            "media_url": "http://pbs.twimg.com/ext_tw_video_thumb/1102156885032124417/pu/img/x2WyNw9pda7khHxt.jpg", 
+            "media_url_https": "https://pbs.twimg.com/ext_tw_video_thumb/1102156885032124417/pu/img/x2WyNw9pda7khHxt.jpg", 
+            "sizes": {
+              "large": {
+                "h": 720, 
+                "resize": "fit", 
+                "w": 720
+              }, 
+              "medium": {
+                "h": 720, 
+                "resize": "fit", 
+                "w": 720
+              }, 
+              "small": {
+                "h": 680, 
+                "resize": "fit", 
+                "w": 680
+              }, 
+              "thumb": {
+                "h": 150, 
+                "resize": "crop", 
+                "w": 150
+              }
+            }, 
+            "type": "video", 
+            "url": "https://t.co/tq9YxYZIDQ", 
+            "video_info": {
+              "aspect_ratio": [
+                1, 
+                1
+              ], 
+              "duration_millis": 59637, 
+              "variants": [
+                {
+                  "content_type": "application/x-mpegURL", 
+                  "url": "https://video.twimg.com/ext_tw_video/1102156885032124417/pu/pl/9xRao3gweGNJahJ-.m3u8?tag=6"
+                }, 
+                {
+                  "bitrate": 432000, 
+                  "content_type": "video/mp4", 
+                  "url": "https://video.twimg.com/ext_tw_video/1102156885032124417/pu/vid/320x320/OLtW5zIWwbe6YC-S.mp4?tag=6"
+                }, 
+                {
+                  "bitrate": 1280000, 
+                  "content_type": "video/mp4", 
+                  "url": "https://video.twimg.com/ext_tw_video/1102156885032124417/pu/vid/720x720/8pU6yLDcUbdCDgmT.mp4?tag=6"
+                }, 
+                {
+                  "bitrate": 832000, 
+                  "content_type": "video/mp4", 
+                  "url": "https://video.twimg.com/ext_tw_video/1102156885032124417/pu/vid/480x480/pP-_FDRLGStPFR8L.mp4?tag=6"
+                }
+              ]
+            }
+          }
+        ], 
+        "symbols": [], 
+        "urls": [], 
+        "user_mentions": []
+      }, 
+      "extended_entities": {
+        "media": [
+          {
+            "additional_media_info": {
+              "monetizable": false
+            }, 
+            "display_url": "pic.twitter.com/tq9YxYZIDQ", 
+            "expanded_url": "https://twitter.com/PartidoPACMA/status/1102158929398661121/video/1", 
+            "id": 1102156885032124417, 
+            "id_str": "1102156885032124417", 
+            "indices": [
+              258, 
+              281
+            ], 
+            "media_url": "http://pbs.twimg.com/ext_tw_video_thumb/1102156885032124417/pu/img/x2WyNw9pda7khHxt.jpg", 
+            "media_url_https": "https://pbs.twimg.com/ext_tw_video_thumb/1102156885032124417/pu/img/x2WyNw9pda7khHxt.jpg", 
+            "sizes": {
+              "large": {
+                "h": 720, 
+                "resize": "fit", 
+                "w": 720
+              }, 
+              "medium": {
+                "h": 720, 
+                "resize": "fit", 
+                "w": 720
+              }, 
+              "small": {
+                "h": 680, 
+                "resize": "fit", 
+                "w": 680
+              }, 
+              "thumb": {
+                "h": 150, 
+                "resize": "crop", 
+                "w": 150
+              }
+            }, 
+            "type": "video", 
+            "url": "https://t.co/tq9YxYZIDQ", 
+            "video_info": {
+              "aspect_ratio": [
+                1, 
+                1
+              ], 
+              "duration_millis": 59637, 
+              "variants": [
+                {
+                  "content_type": "application/x-mpegURL", 
+                  "url": "https://video.twimg.com/ext_tw_video/1102156885032124417/pu/pl/9xRao3gweGNJahJ-.m3u8?tag=6"
+                }, 
+                {
+                  "bitrate": 432000, 
+                  "content_type": "video/mp4", 
+                  "url": "https://video.twimg.com/ext_tw_video/1102156885032124417/pu/vid/320x320/OLtW5zIWwbe6YC-S.mp4?tag=6"
+                }, 
+                {
+                  "bitrate": 1280000, 
+                  "content_type": "video/mp4", 
+                  "url": "https://video.twimg.com/ext_tw_video/1102156885032124417/pu/vid/720x720/8pU6yLDcUbdCDgmT.mp4?tag=6"
+                }, 
+                {
+                  "bitrate": 832000, 
+                  "content_type": "video/mp4", 
+                  "url": "https://video.twimg.com/ext_tw_video/1102156885032124417/pu/vid/480x480/pP-_FDRLGStPFR8L.mp4?tag=6"
+                }
+              ]
+            }
+          }
+        ]
+      }, 
+      "full_text": "\ud83c\udfb9\ud83d\udc08 M\u00fasica y gatos... \n\nSarper Duman es un pianista turco que comparte su vida, y su piano, con gatos rescatados de la calle y que han sufrido el infierno del maltrato y el abandono. Como Fevzi y Veysel, un gato ciego.\n\n\ud83d\ude0d \u27a1\ufe0f \u00a1Disfruta el v\u00eddeo! #FelizDomingo https://t.co/tq9YxYZIDQ"
+    }, 
+    "favorite_count": 3643, 
+    "favorited": false, 
+    "filter_level": "low", 
+    "geo": null, 
+    "id": 1102158929398661121, 
+    "id_str": "1102158929398661121", 
+    "in_reply_to_screen_name": null, 
+    "in_reply_to_status_id": null, 
+    "in_reply_to_status_id_str": null, 
+    "in_reply_to_user_id": null, 
+    "in_reply_to_user_id_str": null, 
+    "is_quote_status": false, 
+    "lang": "es", 
+    "place": null, 
+    "possibly_sensitive": false, 
+    "quote_count": 105, 
+    "reply_count": 68, 
+    "retweet_count": 1444, 
+    "retweeted": false, 
+    "source": "<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>", 
+    "text": "\ud83c\udfb9\ud83d\udc08 M\u00fasica y gatos... \n\nSarper Duman es un pianista turco que comparte su vida, y su piano, con gatos rescatados de\u2026 https://t.co/qQLrmPYKfI", 
+    "truncated": true, 
+    "user": {
+      "contributors_enabled": false, 
+      "created_at": "Wed Oct 21 11:05:53 +0000 2009", 
+      "default_profile": false, 
+      "default_profile_image": false, 
+      "description": "Partido Animalista PACMA. El partido que defiende los derechos de los animales, el medio ambiente y la justicia social.", 
+      "favourites_count": 15713, 
+      "follow_request_sent": null, 
+      "followers_count": 227266, 
+      "following": null, 
+      "friends_count": 1476, 
+      "geo_enabled": true, 
+      "id": 84054978, 
+      "id_str": "84054978", 
+      "is_translator": false, 
+      "lang": "es", 
+      "listed_count": 1344, 
+      "location": "Spain", 
+      "name": "PACMA", 
+      "notifications": null, 
+      "profile_background_color": "C6DF00", 
+      "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png", 
+      "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png", 
+      "profile_background_tile": false, 
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/84054978/1551200225", 
+      "profile_image_url": "http://pbs.twimg.com/profile_images/1053576091229659136/pUimNpdr_normal.jpg", 
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/1053576091229659136/pUimNpdr_normal.jpg", 
+      "profile_link_color": "8DA756", 
+      "profile_sidebar_border_color": "FFFFFF", 
+      "profile_sidebar_fill_color": "DDEEF6", 
+      "profile_text_color": "333333", 
+      "profile_use_background_image": true, 
+      "protected": false, 
+      "screen_name": "PartidoPACMA", 
+      "statuses_count": 30497, 
+      "time_zone": null, 
+      "translator_type": "none", 
+      "url": "http://pacma.es/", 
+      "utc_offset": null, 
+      "verified": true
+    }
+  }, 
+  "source": "<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>", 
+  "text": "RT @PartidoPACMA: \ud83c\udfb9\ud83d\udc08 M\u00fasica y gatos... \n\nSarper Duman es un pianista turco que comparte su vida, y su piano, con gatos rescatados de la cal\u2026", 
+  "timestamp_ms": "1551654807677", 
+  "truncated": false, 
+  "user": {
+    "contributors_enabled": false, 
+    "created_at": "Fri Feb 20 23:29:44 +0000 2015", 
+    "default_profile": true, 
+    "default_profile_image": false, 
+    "description": null, 
+    "favourites_count": 31493, 
+    "follow_request_sent": null, 
+    "followers_count": 209, 
+    "following": null, 
+    "friends_count": 507, 
+    "geo_enabled": false, 
+    "id": 3033480090, 
+    "id_str": "3033480090", 
+    "is_translator": false, 
+    "lang": "es", 
+    "listed_count": 0, 
+    "location": null, 
+    "name": "Papo", 
+    "notifications": null, 
+    "profile_background_color": "C0DEED", 
+    "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png", 
+    "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png", 
+    "profile_background_tile": false, 
+    "profile_banner_url": "https://pbs.twimg.com/profile_banners/3033480090/1547806473", 
+    "profile_image_url": "http://pbs.twimg.com/profile_images/1095786574778896385/sUs_xETi_normal.jpg", 
+    "profile_image_url_https": "https://pbs.twimg.com/profile_images/1095786574778896385/sUs_xETi_normal.jpg", 
+    "profile_link_color": "1DA1F2", 
+    "profile_sidebar_border_color": "C0DEED", 
+    "profile_sidebar_fill_color": "DDEEF6", 
+    "profile_text_color": "333333", 
+    "profile_use_background_image": true, 
+    "protected": false, 
+    "screen_name": "papocuniller", 
+    "statuses_count": 6482, 
+    "time_zone": null, 
+    "translator_type": "none", 
+    "url": null, 
+    "utc_offset": null, 
+    "verified": false
+  }
+}{
+  "contributors": null, 
+  "coordinates": null, 
+  "created_at": "Sun Mar 03 23:13:27 +0000 2019", 
+  "entities": {
+    "hashtags": [
+      {
+        "indices": [
+          77, 
+          86
+        ], 
+        "text": "Veracruz"
+      }
+    ], 
+    "symbols": [], 
+    "urls": [], 
+    "user_mentions": [
+      {
+        "id": 141370188, 
+        "id_str": "141370188", 
+        "indices": [
+          3, 
+          13
+        ], 
+        "name": "Enrique Rodr\u00edguez", 
+        "screen_name": "jenroma27"
+      }, 
+      {
+        "id": 846899281806082053, 
+        "id_str": "846899281806082053", 
+        "indices": [
+          125, 
+          138
+        ], 
+        "name": "El Heraldo de M\u00e9xico", 
+        "screen_name": "elheraldo_mx"
+      }
+    ]
+  }, 
+  "favorite_count": 0, 
+  "favorited": false, 
+  "filter_level": "low", 
+  "geo": null, 
+  "id": 1102346277449273344, 
+  "id_str": "1102346277449273344", 
+  "in_reply_to_screen_name": null, 
+  "in_reply_to_status_id": null, 
+  "in_reply_to_status_id_str": null, 
+  "in_reply_to_user_id": null, 
+  "in_reply_to_user_id_str": null, 
+  "is_quote_status": false, 
+  "lang": "es", 
+  "place": null, 
+  "quote_count": 0, 
+  "reply_count": 0, 
+  "retweet_count": 0, 
+  "retweeted": false, 
+  "retweeted_status": {
+    "contributors": null, 
+    "coordinates": null, 
+    "created_at": "Sun Mar 03 15:06:15 +0000 2019", 
+    "entities": {
+      "hashtags": [
+        {
+          "indices": [
+            62, 
+            71
+          ], 
+          "text": "Veracruz"
+        }
+      ], 
+      "symbols": [], 
+      "urls": [
+        {
+          "display_url": "twitter.com/i/web/status/1\u2026", 
+          "expanded_url": "https://twitter.com/i/web/status/1102223667172237312", 
+          "indices": [
+            112, 
+            135
+          ], 
+          "url": "https://t.co/oafh82R3z0"
+        }
+      ], 
+      "user_mentions": []
+    }, 
+    "extended_tweet": {
+      "display_text_range": [
+        0, 
+        191
+      ], 
+      "entities": {
+        "hashtags": [
+          {
+            "indices": [
+              62, 
+              71
+            ], 
+            "text": "Veracruz"
+          }, 
+          {
+            "indices": [
+              125, 
+              138
+            ], 
+            "text": "FelizDomingo"
+          }, 
+          {
+            "indices": [
+              139, 
+              154
+            ], 
+            "text": "DiaDeLaFamilia"
+          }, 
+          {
+            "indices": [
+              155, 
+              167
+            ], 
+            "text": "BuenDomingo"
+          }
+        ], 
+        "symbols": [], 
+        "urls": [
+          {
+            "display_url": "heraldodemexico.com.mx/opinion/500-de\u2026", 
+            "expanded_url": "https://heraldodemexico.com.mx/opinion/500-de-la-vera-cruz/", 
+            "indices": [
+              168, 
+              191
+            ], 
+            "url": "https://t.co/MJfNNABabZ"
+          }
+        ], 
+        "user_mentions": [
+          {
+            "id": 846899281806082053, 
+            "id_str": "846899281806082053", 
+            "indices": [
+              110, 
+              123
+            ], 
+            "name": "El Heraldo de M\u00e9xico", 
+            "screen_name": "elheraldo_mx"
+          }
+        ]
+      }, 
+      "full_text": "La fusi\u00f3n que dio origen a nuestra cultura mestiza comenz\u00f3 en #Veracruz   Comparto con ustedes mi columna en \u2066@elheraldo_mx\u2069 #FelizDomingo #DiaDeLaFamilia #BuenDomingo https://t.co/MJfNNABabZ"
+    }, 
+    "favorite_count": 8, 
+    "favorited": false, 
+    "filter_level": "low", 
+    "geo": null, 
+    "id": 1102223667172237312, 
+    "id_str": "1102223667172237312", 
+    "in_reply_to_screen_name": null, 
+    "in_reply_to_status_id": null, 
+    "in_reply_to_status_id_str": null, 
+    "in_reply_to_user_id": null, 
+    "in_reply_to_user_id_str": null, 
+    "is_quote_status": false, 
+    "lang": "es", 
+    "place": null, 
+    "possibly_sensitive": false, 
+    "quote_count": 0, 
+    "reply_count": 0, 
+    "retweet_count": 6, 
+    "retweeted": false, 
+    "source": "<a href=\"http://twitter.com/download/iphone\" rel=\"nofollow\">Twitter for iPhone</a>", 
+    "text": "La fusi\u00f3n que dio origen a nuestra cultura mestiza comenz\u00f3 en #Veracruz   Comparto con ustedes mi columna en \u2066\u2026 https://t.co/oafh82R3z0", 
+    "truncated": true, 
+    "user": {
+      "contributors_enabled": false, 
+      "created_at": "Fri May 07 22:44:43 +0000 2010", 
+      "default_profile": false, 
+      "default_profile_image": false, 
+      "description": "Periodista y abogado, en #ElHeraldodeM\u00e9xico escribo la columna \u201cLibertad bajo palabra\u201d Esposo de M\u00f3nica, padre de Enrique, Santiago y Mateo.\ud83c\uddf2\ud83c\uddfd #Rubic\u00f3", 
+      "favourites_count": 1917, 
+      "follow_request_sent": null, 
+      "followers_count": 1016, 
+      "following": null, 
+      "friends_count": 2774, 
+      "geo_enabled": true, 
+      "id": 141370188, 
+      "id_str": "141370188", 
+      "is_translator": false, 
+      "lang": "es", 
+      "listed_count": 17, 
+      "location": "Ciudad de M\u00e9xico", 
+      "name": "Enrique Rodr\u00edguez", 
+      "notifications": null, 
+      "profile_background_color": "2E0211", 
+      "profile_background_image_url": "http://abs.twimg.com/images/themes/theme15/bg.png", 
+      "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme15/bg.png", 
+      "profile_background_tile": false, 
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/141370188/1550070840", 
+      "profile_image_url": "http://pbs.twimg.com/profile_images/1020024475805540352/N0otmNG3_normal.jpg", 
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/1020024475805540352/N0otmNG3_normal.jpg", 
+      "profile_link_color": "000FB3", 
+      "profile_sidebar_border_color": "FFFFFF", 
+      "profile_sidebar_fill_color": "C0DFEC", 
+      "profile_text_color": "333333", 
+      "profile_use_background_image": true, 
+      "protected": false, 
+      "screen_name": "jenroma27", 
+      "statuses_count": 4112, 
+      "time_zone": null, 
+      "translator_type": "none", 
+      "url": null, 
+      "utc_offset": null, 
+      "verified": false
+    }
+  }, 
+  "source": "<a href=\"http://twitter.com/download/iphone\" rel=\"nofollow\">Twitter for iPhone</a>", 
+  "text": "RT @jenroma27: La fusi\u00f3n que dio origen a nuestra cultura mestiza comenz\u00f3 en #Veracruz   Comparto con ustedes mi columna en \u2066@elheraldo_mx\u2069\u2026", 
+  "timestamp_ms": "1551654807804", 
+  "truncated": false, 
+  "user": {
+    "contributors_enabled": false, 
+    "created_at": "Sat Jul 14 16:44:18 +0000 2018", 
+    "default_profile": true, 
+    "default_profile_image": false, 
+    "description": "InverPlus (Desarrollos y Servicios Inmobiliarios)", 
+    "favourites_count": 9877, 
+    "follow_request_sent": null, 
+    "followers_count": 112, 
+    "following": null, 
+    "friends_count": 59, 
+    "geo_enabled": false, 
+    "id": 1018174356378140672, 
+    "id_str": "1018174356378140672", 
+    "is_translator": false, 
+    "lang": "en", 
+    "listed_count": 0, 
+    "location": "Puebla, M\u00e9xico", 
+    "name": "Luis Roberto Lastiri Quir\u00f3s", 
+    "notifications": null, 
+    "profile_background_color": "F5F8FA", 
+    "profile_background_image_url": "", 
+    "profile_background_image_url_https": "", 
+    "profile_background_tile": false, 
+    "profile_banner_url": "https://pbs.twimg.com/profile_banners/1018174356378140672/1532122580", 
+    "profile_image_url": "http://pbs.twimg.com/profile_images/1020421797714382848/Rqy9gfIE_normal.jpg", 
+    "profile_image_url_https": "https://pbs.twimg.com/profile_images/1020421797714382848/Rqy9gfIE_normal.jpg", 
+    "profile_link_color": "1DA1F2", 
+    "profile_sidebar_border_color": "C0DEED", 
+    "profile_sidebar_fill_color": "DDEEF6", 
+    "profile_text_color": "333333", 
+    "profile_use_background_image": true, 
+    "protected": false, 
+    "screen_name": "LastiriRoberto", 
+    "statuses_count": 5515, 
+    "time_zone": null, 
+    "translator_type": "none", 
+    "url": null, 
+    "utc_offset": null, 
+    "verified": false
+  }
+}
