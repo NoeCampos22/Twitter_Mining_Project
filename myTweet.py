@@ -1,10 +1,13 @@
 import re
+import datetime
 
 class myTweet:
 
     ## Constructor
     def __init__(self, ogTweet):
-        self.created_at = ogTweet['created_at']
+        ts = datetime.datetime.strptime(ogTweet['created_at'],'%a %b %d %H:%M:%S +0000 %Y')
+        #ts = time.strftime('%Y-%m-%d %H:%M:%S', time.strptime(ogTweet['created_at'],'%a %b %d %H:%M:%S +0000 %Y'))
+        self.created_at = ts
         self.lang = ogTweet['lang']
         self.text = ogTweet['text']
         self.__getSource(ogTweet)

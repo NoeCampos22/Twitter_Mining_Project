@@ -8,6 +8,9 @@ import codecs
 import json
 import unicodedata
 import Tw_Credentials
+import pymongo
+
+collection = ""
 
 # Get the authentication of the twitter app
 def Get_Authentication():
@@ -42,24 +45,18 @@ class MyStreamListener(StreamListener):
     # If it gets a data
     def on_data(self, data):
         try:
-            with codecs.open("Tweets.txt", 'a', 'utf-8') as tf:
-                encoded = data.encode('utf-8')  # Translate the characters
+            encoded = data.encode('utf-8')  # Translate the characters
 
-                parsed = json.loads(encoded)    # Loads the tweet object
+            parsed = json.loads(encoded)    # Loads the tweet object
 
-                # Create the tweet object with the info we need and return the json
-                Tweet = myTweet(parsed).serialize()
+            # Create the tweet object with the info we need and return the json
+            Tweet = myTweet(parsed).serialize()
 
-                # Get the json format
-                JSONtxt = json.dumps(Tweet, indent=2, sort_keys=True)
+            # Send the tweet to the database on MongoDB Cluster
+            collection.insert_one(Tweet)
 
-                # Write the json in the file
-                tf.write(JSONtxt)
-                tf.write(",\n")
-
-
-                print(JSONtxt)
-                print(" ")
+            # To know it has saved a tweet
+            print(".")
                 
             return True
 
@@ -71,13 +68,31 @@ class MyStreamListener(StreamListener):
 
 if __name__ == '__main__':
     print("====== Running App ======")
-    
-    # Start of the program
-    Auth = Get_Authentication()
-    myStreamListener = MyStreamListener()
-    myStream = Stream(Auth, myStreamListener)
-    
-    print(">> Listening to tweets")
-    myStream.filter(track=['Avengers, avengers, vengadores'])
-    
+
+    try:
+        # Get the connection to the cluster
+        connection = pymongo.MongoClient("mongodb://NoeCampos:221999@twitterproject-shard-00-00-qncgc.mongodb.net:27017,twitterproject-shard-00-01-qncgc.mongodb.net:27017,twitterproject-shard-00-02-qncgc.mongodb.net:27017/test?ssl=true&replicaSet=TwitterProject-shard-0&authSource=admin&retryWrites=true")
+        print("Conection to database established")
+        database = connection['Tweets']     # Get the Database from the conection
+        collection = database['Tweets']     # Get the Collection from the database
+
+
+        # Start of the program
+        Auth = Get_Authentication()
+        myStreamListener = MyStreamListener()
+        myStream = Stream(Auth, myStreamListener)
+        
+        print(">> Listening tweets")
+        myStream.filter(track=['#AvengersEndGame, #Avengers, #Vengadores'])
+
+        #with open('Tweets.txt') as json_file:  
+        #    data = json.load(json_file)
+        #    collection.insert_many(data,True)
+        #    print(data)
+
+
+    except Exception as err:
+        # do whatever you need
+        print(err)
+
     print("Listo")
