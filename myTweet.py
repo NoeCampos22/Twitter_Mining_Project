@@ -1,12 +1,12 @@
 import re
 import datetime
 
+# It is a tweet class but only with the attributes that interest me
 class myTweet:
 
     ## Constructor
     def __init__(self, ogTweet):
         ts = datetime.datetime.strptime(ogTweet['created_at'],'%a %b %d %H:%M:%S +0000 %Y')
-        #ts = time.strftime('%Y-%m-%d %H:%M:%S', time.strptime(ogTweet['created_at'],'%a %b %d %H:%M:%S +0000 %Y'))
         self.created_at = ts
         self.lang = ogTweet['lang']
         self.text = ogTweet['text']
@@ -14,6 +14,7 @@ class myTweet:
         self.__getRetweet(ogTweet)
         self.__getHashtags(ogTweet)
         self.__getMentions(ogTweet)
+        self.__getMedia(ogTweet)
         self.location = ogTweet['user']['location']
         self.user_verified = ogTweet['user']['verified']
         self.user_followers = ogTweet['user']['followers_count']
@@ -48,11 +49,11 @@ class myTweet:
         self.mentions = []
 
         for user in ogTweet['entities']['user_mentions']:
-            self.mentions.append(user['text'])
+            self.mentions.append(user['screen_name'])
 
     
     ## Private function to get the media type list
-    def __getMentions(self, ogTweet):
+    def __getMedia(self, ogTweet):
         self.media = []
 
         if ogTweet['entities'].has_key('media') == True:

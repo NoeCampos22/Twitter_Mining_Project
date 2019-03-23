@@ -1,14 +1,23 @@
+# Imports from the Tweepy API
 from tweepy.streaming import StreamListener
 from tweepy import OAuthHandler
 from tweepy import Stream
 from tweepy import API
+
+# The import the MongoDB API
+import pymongo	
+
+# Imports myTweet class
 from myTweet import myTweet
 
-import codecs
-import json
-import unicodedata
+# Imports the file with the Twitter App credentials
 import Tw_Credentials
-import pymongo
+
+# Another imports to parse the json
+#import codecs
+import json
+#import unicodedata
+
 
 collection = ""
 
@@ -25,13 +34,7 @@ def Get_Authentication():
 
 class MyStreamListener(StreamListener):
 
-    def on_status(self, status):
-        print(status.text.encode("ascii", errors='replace'))
-        print("-"*10)
-
-
-
-        # If it gets an error
+    # If it gets an error
     def on_error(self, status):
         # status 420 is a warning to stop doing this
         if status == 420:
@@ -67,32 +70,33 @@ class MyStreamListener(StreamListener):
 
 
 if __name__ == '__main__':
-    print("====== Running App ======")
+    # An array with the key phrases to filter the tweets
+    keyPhrases = ['#AvengersEndGame, EndGame, #Avengers, Avengers, #Vengadores, #AMLO, AMLO, #Rayados, #OrgulloDeSerRayado, #Tigres, #EstoEsTigres, #Pemex, #BuenDomingo, #FelizDomingo, #Monterrey, #Cancun, #LiguillaMX, @GameOfThrones, #ForTheThrone, #GameofThrones, @Marvel, @Avengers, @Wendy, Roast me']
 
+    print("====== Running App ======")
     try:
-        # Get the connection to the cluster
-        connection = pymongo.MongoClient("mongodb://NoeCampos:221999@twitterproject-shard-00-00-qncgc.mongodb.net:27017,twitterproject-shard-00-01-qncgc.mongodb.net:27017,twitterproject-shard-00-02-qncgc.mongodb.net:27017/test?ssl=true&replicaSet=TwitterProject-shard-0&authSource=admin&retryWrites=true")
+        # Get the connection to the cluster in MongoDB Atlas
+        connection = pymongo.MongoClient("========")
+
         print("Conection to database established")
+
         database = connection['Tweets']     # Get the Database from the conection
         collection = database['Tweets']     # Get the Collection from the database
 
 
-        # Start of the program
+        # Start to the listen tweets
         Auth = Get_Authentication()
         myStreamListener = MyStreamListener()
         myStream = Stream(Auth, myStreamListener)
         
         print(">> Listening tweets")
-        myStream.filter(track=['#AvengersEndGame, #Avengers, #Vengadores'])
 
-        #with open('Tweets.txt') as json_file:  
-        #    data = json.load(json_file)
-        #    collection.insert_many(data,True)
-        #    print(data)
+    # Send the array of key words (Hashtags or Mentions)
+        myStream.filter(track=keyPhrases)
 
 
     except Exception as err:
-        # do whatever you need
+	#Print if there is an error
         print(err)
 
     print("Listo")
