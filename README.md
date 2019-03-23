@@ -50,8 +50,8 @@ Since I made the program in ubuntu, I also made a Shell script to run the python
 
 
 ## Another Sources
--[PyMongo Tutorial](https://www.mongodb.com/blog/post/getting-started-with-python-and-mongodb)
--[MongoDB Conection](https://pythondata.com/collecting-storing-tweets-with-python-and-mongodb/)
+- [PyMongo Tutorial](https://www.mongodb.com/blog/post/getting-started-with-python-and-mongodb)
+- [MongoDB Conection](https://pythondata.com/collecting-storing-tweets-with-python-and-mongodb/)
 
 
 
