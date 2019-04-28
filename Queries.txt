@@ -1,0 +1,84 @@
+// Conenctar al Cluster
+mongo "mongodb+srv://twitterproject-qncgc.mongodb.net/test" --username NoeCampos
+
+
+
+1. ¿Cuántos fueron de cuentas verificadas?
+db.Tweets.find({user_verified: true}).count()
+
+2. ¿Cuales son los tres lenguajes que más se registraron? 
+db.Tweets.aggregate([
+	{ $sortByCount: "$lang"},
+	{ $limit: 3}
+])
+
+3. ¿Cuales fueron los # más usados?
+db.Tweets.aggregate([
+	{ $unwind: "$hashtags" },
+	{ $sortByCount: "$hashtags" },
+	{$limit: 10}
+])
+
+4. ¿Cuantos son retweets?
+db.Tweets.find({rt: true}).count()
+
+5. ¿Cuales son las cinco cuentas más mencionadas en Tweets originales?
+db.Tweets.aggregate([
+	{$match:{
+		"rt": false
+	}}, 
+    	{$unwind: "$mentions"}, 
+	{$sortByCount: "$mentions" },
+	{$limit: 5} 
+])
+
+6. ¿Qué día de la semana se registraron más tweets?
+db.Tweets.aggregate([
+	// Get only records created in the last 60 days
+	{$match:{
+		"created_at":{$gt: new Date(ISODate().getTime() - 1000*60*60*24*60)}
+	}}, 
+    	{$project:{
+        	"day": {$dayOfWeek:"$created_at"}
+    	}}, 
+	{$sortByCount: "$day" },
+	{$limit: 1} 
+])
+
+7. ¿De qué zona geográfica se realizaron más tweets?
+db.Tweets.aggregate([
+	{"$group" : 
+		{_id: {location:"$location"}, count:{$sum:1}}
+	}, 
+	{$sort: {"count":-1}},
+	{$limit: 2}
+])
+
+
+8. ¿Cuántos tweets incluían una imagen? 
+db.Tweets.aggregate([
+	{$project: {_id:1, media:1,media_size: {$size: "$media"}}},
+     	{$match: {"media_size": {$gt: 0}}},
+	{$count: "media"}
+])
+
+
+9. Cantidad de tweets que tienen más de 140 caracteres.
+db.Tweets.find({ 
+	"$expr": { "$gt": [ { "$strLenCP": "$text" }, 140 ] } 
+}).count()
+
+
+10. ¿Cuántos tweets son hechos desde un celular? 
+db.Tweets.find({source: {$in: [ 'Twitter for Android', 'Twitter for iPhone']}}).count()
+
+
+
+
+
+// NOTA: Este obtiene el tamaño de cada tweet
+db.Tweets.aggregate([
+	{ $project: {
+		"text": 1,
+		"length": { $strLenCP: "$text" }
+	}}]).pretty()
