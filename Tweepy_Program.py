@@ -76,7 +76,7 @@ if __name__ == '__main__':
     print("====== Running App ======")
     try:
         # Get the connection to the cluster in MongoDB Atlas
-        connection = pymongo.MongoClient("mongodb://NoeCampos:221999@twitterproject-shard-00-00-qncgc.mongodb.net:27017,twitterproject-shard-00-01-qncgc.mongodb.net:27017,twitterproject-shard-00-02-qncgc.mongodb.net:27017/test?ssl=true&replicaSet=TwitterProject-shard-0&authSource=admin&retryWrites=true")
+        connection = pymongo.MongoClient("==============")
 
         print("Conection to database established")
 
