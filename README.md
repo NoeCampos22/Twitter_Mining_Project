@@ -1,13 +1,13 @@
 # Tweets Mining Project
 
-It is a project from my advanced database class where I needed to make a program in [Python](https://www.python.org/) that gets and store in a NoSQL database. 
+It is a project from my advanced database class where I needed to make a program in [Python](https://www.python.org/) to get and save tweets in a NoSQL database. 
 
 I used the python API named [Tweepy](http://www.tweepy.org/) to listen or even write tweets and [PyMongo](https://api.mongodb.com/python/current/) to make the connection to my database in [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) and save the tweets.
 
 ## Files
 
 ### myTweet.py 
-It is a Tweet class I created to store only the attributes that I need from the original and parsed [Tweet object](https://developer.twitter.com/en/docs/tweets/data-dictionary/overview/intro-to-tweet-json) that gets from Tweepy API. 
+It is a Tweet class I created to store only the attributes that I need from the original [Tweet object](https://developer.twitter.com/en/docs/tweets/data-dictionary/overview/intro-to-tweet-json) that gets from Tweepy API. 
 
 Attributes:
 - created_at:       Creation date
@@ -50,8 +50,8 @@ Since I made the program in ubuntu, I also made a Shell script to run the python
 
 
 ## Another Sources
--[PyMongo Tutorial](https://www.mongodb.com/blog/post/getting-started-with-python-and-mongodb)
--[MongoDB Conection](https://pythondata.com/collecting-storing-tweets-with-python-and-mongodb/)
+- [PyMongo Tutorial](https://www.mongodb.com/blog/post/getting-started-with-python-and-mongodb)
+- [MongoDB Conection](https://pythondata.com/collecting-storing-tweets-with-python-and-mongodb/)
 
 
 
