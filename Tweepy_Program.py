@@ -14,9 +14,8 @@ from myTweet import myTweet
 import Tw_Credentials
 
 # Another imports to parse the json
-#import codecs
 import json
-#import unicodedata
+import time
 
 
 collection = ""
@@ -60,6 +59,7 @@ class MyStreamListener(StreamListener):
 
             # To know it has saved a tweet
             print(".")
+            time.sleep(1)
                 
             return True
 
@@ -76,7 +76,7 @@ if __name__ == '__main__':
     print("====== Running App ======")
     try:
         # Get the connection to the cluster in MongoDB Atlas
-        connection = pymongo.MongoClient("========")
+        connection = pymongo.MongoClient("mongodb://NoeCampos:221999@twitterproject-shard-00-00-qncgc.mongodb.net:27017,twitterproject-shard-00-01-qncgc.mongodb.net:27017,twitterproject-shard-00-02-qncgc.mongodb.net:27017/test?ssl=true&replicaSet=TwitterProject-shard-0&authSource=admin&retryWrites=true")
 
         print("Conection to database established")
 
@@ -92,7 +92,7 @@ if __name__ == '__main__':
         print(">> Listening tweets")
 
     # Send the array of key words (Hashtags or Mentions)
-        myStream.filter(track=keyPhrases)
+        myStream.filter(track=keyPhrases,  stall_warnings=True)
 
 
     except Exception as err:

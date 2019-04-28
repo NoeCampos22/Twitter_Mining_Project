@@ -1,0 +1,66 @@
+Fecha = ['created_at']
+Lenguahe = ['lang']
+Verificado = ['user']['verified']
+Locación = ['location']
+# Retweets = []
+In replay to id tweet = ['in_reply_to_status_id']
+
+
+# Tweet data
+print(parsed['text'])
+print(parsed['created_at'])
+print(parsed['lang'])
+if len(parsed['entities']['hashtags']) > 0:
+print(len(parsed['entities']['hashtags']))
+#                    print(parsed['entities']['hashtags'][0]['text'])
+
+print(parsed['retweet_count'])
+print(parsed['source'])
+print(parsed['in_reply_to_status_id'])
+
+# Know if it is a retweet
+if parsed.has_key('retweeted_status') == True:
+    print('This tweet is a retweet')
+    print(parsed['retweeted_status']['retweet_count'])
+    print(parsed['retweeted_status']['favorite_count'])
+else:
+    print('This tweet is not retweet')
+
+
+Hashtags = []
+Mentions = []
+print(len(parsed['entities']['hashtags']))
+print(len(parsed['entities']['user_mentions']))     
+
+for hasht in parsed['entities']['hashtags']:
+    Hashtags.append(hasht['text'])
+
+print(Hashtags)
+
+for user in parsed['entities']['user_mentions']:
+    Mentions.append(user['screen_name'])
+
+print(Mentions)
+
+Media = []
+if parsed['entities'].has_key('media'):
+    print(len(parsed['entities']['media']))
+    for media in parsed['entities']['media']:
+        Media.append(media['type'])
+
+    print(Media)
+else:
+    print("no media")
+
+# User data
+print(parsed['user']['location'])
+print(parsed['user']['protected'])
+print(parsed['user']['verified'])
+print(parsed['user']['followers_count'])
+
+
+
+JSONtxt = json.dumps(parsed, indent=2, sort_keys=True)
+                    #print(JSONtxt)
+                    tf.write(JSONtxt)
+                    tf.write("-------------------------------------------------------------")
