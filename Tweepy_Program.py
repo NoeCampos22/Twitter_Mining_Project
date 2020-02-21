@@ -37,12 +37,14 @@ class MyStreamListener(StreamListener):
 
     def on_data(self, data):
         try:
-            encoded = data.encode('utf-8')  # Translate the characters
-
-            parsed = json.loads(encoded)    # Loads the tweet object
+            # Loads the tweet object
+            parsed = json.loads(data)
 
             # Create the tweet object with the info we need and return the json
             Tweet = myTweet(parsed).serialize()
+
+            # Print the json
+            # print(json.dumps(Tweet, indent=4, ensure_ascii=False))
 
             return True
 
@@ -54,7 +56,7 @@ class MyStreamListener(StreamListener):
 
 if __name__ == '__main__':
     # An array with the key phrases to filter the tweets
-    keyPhrases = ['']
+    keyPhrases = ['coronavirus', '#Coronavirus', 'China']
 
     print("====== Running App ======")
     try:
@@ -66,7 +68,7 @@ if __name__ == '__main__':
         print(">> Listening tweets")
 
     # Send the array of key words (Hashtags or Mentions)
-        myStream.filter(track=keyPhrases,  stall_warnings=True)
+        myStream.filter(track=keyPhrases, stall_warnings=True)
 
     except Exception as err:
         # Print if there is an error
