@@ -3,7 +3,7 @@ Author: Noé Amador Campos Casillo
 Email: ama-noe@outlook.com
 Description: It is a class to store just the data I need from
 the original Tweet object received from the Twitter API.
-Last Update: 21-Feb-2020
+Last Update: 22-Feb-2020
 """
 
 import re
@@ -21,7 +21,7 @@ class myTweet:
         It is the constructor to my version of the tweet object.
 
         Parameters:
-        - ogTweet: The tweet object. Or send None to create an empty myTweet.
+        - ogTweet: The tweet object.
         """
 
         # Get tweet data
@@ -44,19 +44,14 @@ class myTweet:
         Private function to get data about the tweet object.
 
         Parameters:
-        - ogTweet: The tweet object. Or send None to create an empty myTweet.
+        - ogTweet: The tweet object.
         """
 
         if ogTweet != None:
-            self.tw_lang = ogTweet['lang']
-            self.tw_place = ogTweet['place']
             self.tw_id_str = ogTweet['id_str']
-            self.tw_favorited = ogTweet['favorited']
             self.tw_truncated = ogTweet['truncated']
             self.tw_created_at = ogTweet['created_at']
             self.tw_coordinates = ogTweet['coordinates']
-            self.tw_retweet_count = ogTweet['retweet_count']
-            self.tw_favorite_count = ogTweet['favorite_count']
             self.tw_is_quote_status = ogTweet['is_quote_status']
             self.tw_in_reply_to_user_id_str = ogTweet['in_reply_to_user_id_str']
             self.tw_in_reply_to_status_id_str = ogTweet['in_reply_to_status_id_str']
@@ -65,37 +60,18 @@ class myTweet:
             # the extended_tweet object.
             if 'extended_tweet' in ogTweet:
                 self.tw_text = ogTweet['extended_tweet']['full_text']
-                print(self.tw_text)
 
             else:
                 self.tw_text = ogTweet['text']
-                print(self.tw_text)
-
-        else:
-            self.tw_user = ""
-            self.tw_lang = ""
-            self.tw_text = ""
-            self.tw_place = ""
-            self.tw_id_str = ""
-            self.tw_entities = ""
-            self.tw_favorited = ""
-            self.tw_truncated = False
-            self.tw_created_at = ""
-            self.tw_coordinates = ""
-            self.tw_retweet_count = ""
-            self.tw_favorite_count = ""
-            self.tw_is_quote_status = ""
-            self.tw_in_reply_to_user_id_str = ""
-            self.tw_in_reply_to_status_id_str = ""
 
     def __getRetweet(self, ogTweet):
         """
         Private function to get if the received tweet is a retweet or not.
 
         Parameters:
-        - ogTweet: The tweet object. Or send None to create an empty myTweet.
+        - ogTweet: The tweet object.
         """
-        if ogTweet != None and 'retweeted_status' in ogTweet:
+        if 'retweeted_status' in ogTweet:
             self.rt_isRetweet = True
             self.rt_OgTweetID = ogTweet['retweeted_status']['id_str']
             self.rt_OgRetwCount = ogTweet['retweeted_status']['retweet_count']
@@ -111,7 +87,7 @@ class myTweet:
         Private function to get information from the tweet's author
 
         Parameters:
-        - ogTweet: The tweet object. Or send None to create an empty myTweet.
+        - ogTweet: The tweet object.
         """
         if ogTweet != None:
             # User information
@@ -126,45 +102,31 @@ class myTweet:
             self.usr_followerscount = ogTweet['user']['followers_count']
             self.usr_favouritescount = ogTweet['user']['favourites_count']
 
-        else:
-            # User information
-            self.usr_name = ""
-            self.usr_id_str = ""
-            self.usr_verified = False
-            self.usr_location = ""
-            self.usr_screenname = ""
-            self.usr_listedcount = 0
-            self.usr_friendscount = 0
-            self.usr_statusescount = 0
-            self.usr_followerscount = 0
-            self.usr_favouritescount = 0
-
     def __getFromEntities(self, ogTweet):
         """
         Private function to get the list of the hashtags, media files or urls
         that are used on the tweet
 
         Parameters:
-        - ogTweet: The tweet object. Or send None to create an empty myTweet.
+        - ogTweet: The tweet object.
         """
         self.ent_urls = ""
         self.ent_media = ""
         self.ent_hashtags = ""
 
-        if ogTweet != None:
-            if 'media' in ogTweet['entities']:
-                for media in ogTweet['entities']['media']:
-                    self.ent_media += media['expanded_url'] + " | "
+        if 'media' in ogTweet['entities']:
+            for media in ogTweet['entities']['media']:
+                self.ent_media += media['expanded_url'] + " | "
 
-            for hasht in ogTweet['entities']['hashtags']:
-                self.ent_hashtags += hasht['text'] + " | "
+        for hasht in ogTweet['entities']['hashtags']:
+            self.ent_hashtags += hasht['text'] + " | "
 
-            for url in ogTweet['entities']['urls']:
-                self.ent_urls += url['url'] + " | "
+        for url in ogTweet['entities']['urls']:
+            self.ent_urls += url['url'] + " | "
 
-            self.ent_urls = self.ent_urls[:-3]
-            self.ent_media = self.ent_media[:-3]
-            self.ent_hashtags = self.ent_hashtags[:-3]
+        self.ent_urls = self.ent_urls[:-3]
+        self.ent_media = self.ent_media[:-3]
+        self.ent_hashtags = self.ent_hashtags[:-3]
 
     def __getFromPlace(self, ogTweet):
         """
@@ -172,9 +134,11 @@ class myTweet:
             about the place the tweet was made from.
 
             Parameters:
-                - ogTweet: The tweet object. Or send None to create an empty myTweet.
+                - ogTweet: The tweet object.
         """
-        if ogTweet != None and ogTweet['place'] != None:
+
+        # Check if the place object exists or not and save it if so
+        if ogTweet['place'] != None:
             self.geo_name = ogTweet['name']
             self.geo_country = ogTweet['country']
             self.geo_full_name = ogTweet['full_name']
