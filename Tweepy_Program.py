@@ -30,8 +30,25 @@ import csv
 FILE_MINING = None
 # Variable to know if the output file already exists or not
 FILE_EXISTS = False
-# Variable to count how many tweets were mined
+# Count how many tweets were mined
 TWEETS_COUNT = 0
+# Count how many tweets were rejected
+REJECT_COUNT = 0
+
+
+def printResult(cChar):
+    """
+    Function to print a point or a asteristic(error)
+    """
+    global TWEETS_COUNT
+
+    # Increase the tweets counter
+    TWEETS_COUNT += 1
+
+    if TWEETS_COUNT % 30 == 0:
+        print(cChar)
+    else:
+        print(cChar, end=' ')
 
 
 def Get_Authentication():
@@ -66,6 +83,7 @@ class MyStreamListener(StreamListener):
             global FILE_EXISTS
             global FILE_MINING
             global TWEETS_COUNT
+            global REJECT_COUNT
 
             # Loads the tweet object
             parsed = json.loads(data)
@@ -86,28 +104,35 @@ class MyStreamListener(StreamListener):
             # Write the dict on the file
             dictWriter.writerow(Tweet)
 
-            # Plus one to the counter
-            TWEETS_COUNT += 1
-
-            # Print in the terminal
-            if TWEETS_COUNT % 15 == 0:
-                print('.')
-            else:
-                print('.', end=' ')
+            # Print a dot
+            printResult('.')
 
             return True
 
-        except BaseException as e:
-            print("->Error on data: %s" % str(e))   # Catch the error
+        except Exception:
+            REJECT_COUNT += 1
+            # Print if there is an error
+            printResult('*')
 
         return True
 
 
 if __name__ == '__main__':
     # An array with the key phrases to filter the tweets
-    keyWords = ['china', "parodehombres"]
+    keyWords = ['2019nCoV', 'coronavirus 2019', 'covid-19', 'organizacion mundial de la salud',
+                'protocolo de investigacion', 'salud publica', 'OMS', 'secretaria de salud', 'secretario de salud',
+                'world health organization', 'centro de salud', 'centro de investigacion', 'anticuerpos monoclonales',
+                'Coronavirus Outbreak ', 'tasa de mortalidad', 'virus wuhan', 'no es coronavirus', 'C-O-V-I-D',
+                'actualización coronavirus', 'coronavirus', 'covid', 'COVID', '#Coronavirus',
+                '#coronavirus', '#COVID19', '#China', 'contagios', 'brotes', 'epidemias', 'mascarillas',
+                'Centro de Salud', 'pacientes', 'casos positivos', '#CoronavirusMexico', '#CoronavirusChino',
+                '#CoronavirusOutbreak']
 
-    print("====== Running App ======")
+    print("\n====== Running App ======")
+    print("\n-----------------------------------------")
+    print("NOTE: Each dot '.' is a saved tweet and \neach asteristic '*' is a rejected tweet.")
+    print("-----------------------------------------")
+
     try:
         # Start to the listen tweets
         Auth = Get_Authentication()
@@ -129,11 +154,15 @@ if __name__ == '__main__':
 
     # To stop the program
     except KeyboardInterrupt:
+
+        # Close the CSV File
         FILE_MINING.close()
+
         print("\n\n>> Mining finished.")
-        print(str(TWEETS_COUNT) +
+        print(str(TWEETS_COUNT - REJECT_COUNT) +
               " tweets were written in the coronavirusTweets.csv file")
 
+    # Catch the excepetion
     except Exception as err:
-        # Print if there is an error
+        print()
         print(err)
