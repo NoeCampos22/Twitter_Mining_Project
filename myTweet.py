@@ -1,9 +1,9 @@
 """
 Author: Noé Amador Campos Casillo
 Email: ama-noe@outlook.com
-Description: It is a class to store just the data I need from
-the original Tweet object received from the Twitter API.
-Last Update: 22-Feb-2020
+Description: It is a class to filter and store just the data 
+I need from the original Tweet object.
+Last Update: 09-April-2020
 """
 
 import re
@@ -27,11 +27,11 @@ class myTweet:
         # Get tweet data
         self.__getTweetData(ogTweet)
 
-        # Get if it is a retweet or not
-        self.__getRetweet(ogTweet)
-
         # Get user information
         self.__getUserData(ogTweet)
+
+        # Get if it is a retweet or not
+        self.__getRetweet(ogTweet)
 
         # Get all the data from the entities
         self.__getFromEntities(ogTweet)
@@ -47,22 +47,19 @@ class myTweet:
         - ogTweet: The tweet object.
         """
 
-        if ogTweet != None:
-            self.tw_id_str = ogTweet['id_str']
-            self.tw_truncated = ogTweet['truncated']
-            self.tw_created_at = ogTweet['created_at']
-            self.tw_coordinates = ogTweet['coordinates']
-            self.tw_is_quote_status = ogTweet['is_quote_status']
-            self.tw_in_reply_to_user_id_str = ogTweet['in_reply_to_user_id_str']
-            self.tw_in_reply_to_status_id_str = ogTweet['in_reply_to_status_id_str']
+        self.tw_id_str = ogTweet['id_str']
+        self.tw_created_at = ogTweet['created_at']
+        self.tw_coordinates = ogTweet['coordinates']
+        self.tw_is_quote_status = ogTweet['is_quote_status']
+        self.tw_in_reply_to_user_id_str = ogTweet['in_reply_to_user_id_str']
+        self.tw_in_reply_to_status_id_str = ogTweet['in_reply_to_status_id_str']
 
-            # If the text has more than 140 chars, the full text is inside
-            # the extended_tweet object.
-            if 'extended_tweet' in ogTweet:
-                self.tw_text = ogTweet['extended_tweet']['full_text']
-
-            else:
-                self.tw_text = ogTweet['text']
+        # If the text has more than 140 chars, the full text is inside
+        # the extended_tweet object.
+        if hasattr(ogTweet, 'extended_tweet'):
+            self.tw_text = ogTweet['extended_tweet']['full_text']
+        else:
+            self.tw_text = ogTweet['text']
 
     def __getRetweet(self, ogTweet):
         """
@@ -71,6 +68,7 @@ class myTweet:
         Parameters:
         - ogTweet: The tweet object.
         """
+
         if 'retweeted_status' in ogTweet:
             self.rt_isRetweet = True
             self.rt_OgTweetID = ogTweet['retweeted_status']['id_str']
@@ -89,18 +87,17 @@ class myTweet:
         Parameters:
         - ogTweet: The tweet object.
         """
-        if ogTweet != None:
-            # User information
-            self.usr_name = ogTweet['user']['name']
-            self.usr_id_str = ogTweet['user']['id_str']
-            self.usr_verified = ogTweet['user']['verified']
-            self.usr_location = ogTweet['user']['location']
-            self.usr_screenname = ogTweet['user']['screen_name']
-            self.usr_listedcount = ogTweet['user']['listed_count']
-            self.usr_friendscount = ogTweet['user']['friends_count']
-            self.usr_statusescount = ogTweet['user']['statuses_count']
-            self.usr_followerscount = ogTweet['user']['followers_count']
-            self.usr_favouritescount = ogTweet['user']['favourites_count']
+        # User information
+        self.usr_name = ogTweet['user']['name']
+        self.usr_id_str = ogTweet['user']['id_str']
+        self.usr_verified = ogTweet['user']['verified']
+        self.usr_location = ogTweet['user']['location']
+        self.usr_screenname = ogTweet['user']['screen_name']
+        self.usr_listedcount = ogTweet['user']['listed_count']
+        self.usr_friendscount = ogTweet['user']['friends_count']
+        self.usr_statusescount = ogTweet['user']['statuses_count']
+        self.usr_followerscount = ogTweet['user']['followers_count']
+        self.usr_favouritescount = ogTweet['user']['favourites_count']
 
     def __getFromEntities(self, ogTweet):
         """
@@ -114,7 +111,7 @@ class myTweet:
         self.ent_media = ""
         self.ent_hashtags = ""
 
-        if 'media' in ogTweet['entities']:
+        if hasattr(ogTweet['entities'], 'media'):
             for media in ogTweet['entities']['media']:
                 self.ent_media += media['expanded_url'] + " | "
 
@@ -138,7 +135,7 @@ class myTweet:
         """
 
         # Check if the place object exists or not and save it if so
-        if ogTweet['place'] != None:
+        if hasattr(ogTweet, 'place'):
             self.geo_name = ogTweet['name']
             self.geo_country = ogTweet['country']
             self.geo_full_name = ogTweet['full_name']

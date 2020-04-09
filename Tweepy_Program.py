@@ -3,7 +3,7 @@ Author: Noé Amador Campos Casillo
 Email: ama-noe@outlook.com
 Description: The python script in charge of using tweepy to the 
 mining of tweets given certain key words
-Last Update: 22-Feb-2020
+Last Update: 09-April-2020
 """
 
 # Imports from the Tweepy API
@@ -45,7 +45,7 @@ def printResult(cChar):
     # Increase the tweets counter
     TWEETS_COUNT += 1
 
-    if TWEETS_COUNT % 30 == 0:
+    if TWEETS_COUNT % 35 == 0:
         print(cChar)
     else:
         print(cChar, end=' ')
@@ -88,31 +88,35 @@ class MyStreamListener(StreamListener):
             # Loads the tweet object
             parsed = json.loads(data)
 
-            # Create the tweet object with the info we need and return the json
-            Tweet = myTweet(parsed).serialize()
+            # This is because sometimes the API returns a Limit notices object
+            # More info:
+            # https://developer.twitter.com/en/docs/tweets/filter-realtime/overview/statuses-filter
+            if 'id_str' in parsed:
 
-            # Object to write a dictionary on a csv
-            dictWriter = csv.DictWriter(
-                FILE_MINING, fieldnames=Tweet.keys(), delimiter=',', lineterminator='\n')
+                # Create the tweet object with the info we need and return the json
+                Tweet = myTweet(parsed).serialize()
 
-            # If the file did not exists
-            if not FILE_EXISTS:
-                # Writes the headers
-                dictWriter.writeheader()
-                FILE_EXISTS = True
+                # Object to write a dictionary on a csv
+                dictWriter = csv.DictWriter(
+                    FILE_MINING, fieldnames=Tweet.keys(), delimiter=',', lineterminator='\n')
 
-            # Write the dict on the file
-            dictWriter.writerow(Tweet)
+                # If the file did not exists
+                if not FILE_EXISTS:
+                    # Writes the headers
+                    dictWriter.writeheader()
+                    FILE_EXISTS = True
 
-            # Print a dot
-            printResult('.')
+                # Write the dict on the file
+                dictWriter.writerow(Tweet)
+
+                # Print a dot
+                printResult('.')
 
             return True
 
-        except Exception:
+        except Exception as ex:
             REJECT_COUNT += 1
-            # Print if there is an error
-            printResult('*')
+            print(ex)
 
         return True
 
@@ -129,9 +133,6 @@ if __name__ == '__main__':
                 '#CoronavirusOutbreak']
 
     print("\n====== Running App ======")
-    print("\n-----------------------------------------")
-    print("NOTE: Each dot '.' is a saved tweet and \neach asteristic '*' is a rejected tweet.")
-    print("-----------------------------------------")
 
     try:
         # Start to the listen tweets
