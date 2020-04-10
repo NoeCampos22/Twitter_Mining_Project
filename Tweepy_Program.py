@@ -1,14 +1,22 @@
+"""
+Author: Noé Amador Campos Casillo
+Email: ama-noe@outlook.com
+Description: The python script in charge of using tweepy to the 
+mining of tweets given certain key words
+Last Update: 09-April-2020
+"""
+
 # Imports from the Tweepy API
 from tweepy.streaming import StreamListener
 from tweepy import OAuthHandler
 from tweepy import Stream
 from tweepy import API
 
-# The import the MongoDB API
-import pymongo	
-
 # Imports myTweet class
 from myTweet import myTweet
+
+# To check if the file exist
+import os.path
 
 # Imports the file with the Twitter App credentials
 import Tw_Credentials
@@ -16,24 +24,52 @@ import Tw_Credentials
 # Another imports to parse the json
 import json
 import time
+import csv
+
+# Variable to store the pointer to the CSV file
+FILE_MINING = None
+# Variable to know if the output file already exists or not
+FILE_EXISTS = False
+# Count how many tweets were mined
+TWEETS_COUNT = 0
+# Count how many tweets were rejected
+REJECT_COUNT = 0
 
 
-collection = ""
+def printResult(cChar):
+    """
+    Function to print a point or a asteristic(error)
+    """
+    global TWEETS_COUNT
 
-# Get the authentication of the twitter app
+    # Increase the tweets counter
+    TWEETS_COUNT += 1
+
+    if TWEETS_COUNT % 35 == 0:
+        print(cChar)
+    else:
+        print(cChar, end=' ')
+
+
 def Get_Authentication():
-    # Validate the Con
+    """
+    Get the authentication of the twitter app
+    """
+
+    # Validate the Credentials
     Auth = OAuthHandler(Tw_Credentials.CON_KEY,
                         Tw_Credentials.CON_KEY_SECRET)
     # Validate the Acces Tokens
     Auth.set_access_token(Tw_Credentials.ACC_TOKEN,
-                        Tw_Credentials.ACC_TOKEN_SECRET)
+                          Tw_Credentials.ACC_TOKEN_SECRET)
     return Auth
 
 
 class MyStreamListener(StreamListener):
+    """
+    Class in charge of getting the tweets
+    """
 
-    # If it gets an error
     def on_error(self, status):
         # status 420 is a warning to stop doing this
         if status == 420:
@@ -41,62 +77,93 @@ class MyStreamListener(StreamListener):
         # Print the error status
         print(status)
 
-
-
-
-    # If it gets a data
     def on_data(self, data):
         try:
-            encoded = data.encode('utf-8')  # Translate the characters
+            # Get the global variables
+            global FILE_EXISTS
+            global FILE_MINING
+            global TWEETS_COUNT
+            global REJECT_COUNT
 
-            parsed = json.loads(encoded)    # Loads the tweet object
+            # Loads the tweet object
+            parsed = json.loads(data)
 
-            # Create the tweet object with the info we need and return the json
-            Tweet = myTweet(parsed).serialize()
+            # This is because sometimes the API returns a Limit notices object
+            # More info:
+            # https://developer.twitter.com/en/docs/tweets/filter-realtime/overview/statuses-filter
+            if 'id_str' in parsed:
 
-            # Send the tweet to the database on MongoDB Cluster
-            collection.insert_one(Tweet)
+                # Create the tweet object with the info we need and return the json
+                Tweet = myTweet(parsed).serialize()
 
-            # To know it has saved a tweet
-            print(".")
-            time.sleep(1)
-                
+                # Object to write a dictionary on a csv
+                dictWriter = csv.DictWriter(
+                    FILE_MINING, fieldnames=Tweet.keys(), delimiter=',', lineterminator='\n')
+
+                # If the file did not exists
+                if not FILE_EXISTS:
+                    # Writes the headers
+                    dictWriter.writeheader()
+                    FILE_EXISTS = True
+
+                # Write the dict on the file
+                dictWriter.writerow(Tweet)
+
+                # Print a dot
+                printResult('.')
+
             return True
 
-        except BaseException as e:
-            print("->Error on data: %s" % str(e))   # Catch the error 
+        except Exception as ex:
+            REJECT_COUNT += 1
+            print(ex)
 
         return True
 
 
 if __name__ == '__main__':
     # An array with the key phrases to filter the tweets
-    keyPhrases = ['#AvengersEndGame, EndGame, #Avengers, Avengers, #Vengadores, #AMLO, AMLO, #Rayados, #OrgulloDeSerRayado, #Tigres, #EstoEsTigres, #Pemex, #BuenDomingo, #FelizDomingo, #Monterrey, #Cancun, #LiguillaMX, @GameOfThrones, #ForTheThrone, #GameofThrones, @Marvel, @Avengers, @Wendy, Roast me']
+    keyWords = ['2019nCoV', 'coronavirus 2019', 'covid-19', 'organizacion mundial de la salud',
+                'protocolo de investigacion', 'salud publica', 'OMS', 'secretaria de salud', 'secretario de salud',
+                'world health organization', 'centro de salud', 'centro de investigacion', 'anticuerpos monoclonales',
+                'Coronavirus Outbreak ', 'tasa de mortalidad', 'virus wuhan', 'no es coronavirus', 'C-O-V-I-D',
+                'actualización coronavirus', 'coronavirus', 'covid', 'COVID', '#Coronavirus',
+                '#coronavirus', '#COVID19', '#China', 'contagios', 'brotes', 'epidemias', 'mascarillas',
+                'Centro de Salud', 'pacientes', 'casos positivos', '#CoronavirusMexico', '#CoronavirusChino',
+                '#CoronavirusOutbreak']
 
-    print("====== Running App ======")
+    print("\n====== Running App ======")
+
     try:
-        # Get the connection to the cluster in MongoDB Atlas
-        connection = pymongo.MongoClient("==============")
-
-        print("Conection to database established")
-
-        database = connection['Tweets']     # Get the Database from the conection
-        collection = database['Tweets']     # Get the Collection from the database
-
-
         # Start to the listen tweets
         Auth = Get_Authentication()
         myStreamListener = MyStreamListener()
         myStream = Stream(Auth, myStreamListener)
-        
-        print(">> Listening tweets")
 
-    # Send the array of key words (Hashtags or Mentions)
-        myStream.filter(track=keyPhrases,  stall_warnings=True)
+        # Check if the CSV file already exits
+        if os.path.exists('coronavirusTweets.csv'):
+            FILE_EXISTS = True
 
+        # Open the file where the tweets are going to be write
+        FILE_MINING = open('coronavirusTweets.csv', 'a+',
+                           encoding='UTF-8', newline='')
 
+        print("\n>> Listening tweets")
+
+        # Filter the tweets by language (spanish) and the keywords
+        myStream.filter(languages=["es"], track=keyWords, stall_warnings=True)
+
+    # To stop the program
+    except KeyboardInterrupt:
+
+        # Close the CSV File
+        FILE_MINING.close()
+
+        print("\n\n>> Mining finished.")
+        print(str(TWEETS_COUNT - REJECT_COUNT) +
+              " tweets were written in the coronavirusTweets.csv file")
+
+    # Catch the excepetion
     except Exception as err:
-	#Print if there is an error
+        print()
         print(err)
-
-    print("Listo")
